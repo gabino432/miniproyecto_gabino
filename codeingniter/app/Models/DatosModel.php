@@ -1,41 +1,42 @@
 <?php
 namespace App\Models;
-use code Codelgniter\Model;
- class GeneralModel extends Model {
-   public function obtenerInformacion($data){
-    $Model=$this->ab->table('persona');
-    $Model->where($data); 
-    return $gModel->get()->getResultArray();
+use codeigniter\Model;
+class DatosModel extends Model{
+    public  function obtenerinformacion($data){
+      $gModel = $this->db->table('persona');
+      $gModel->where($data);
+      return $gModel->get()->getResultArray();
 
-   } 
+    }
 
-public function listarTodo()}
- $gModel=$this->ab->query("SELECT*FROM persona"); 
- return $gModel->getResult();
+  public function listartodo(){
+    $gModel = $this->db->query("SELECT + FROM persona");
+      return $gModel->getResult();
 
-}
+  }
 
-public function insertar($data){
-   $Model=$this->ab->table('persona');
-   $Model->insert($data);
-   return $this->ab->insertID();
+    public function insertar($data){
+        $gModel = $this->db->table('persona');
+        $gModel->insert($data);
+        return $this->db->insertID();
+
+    } 
 
 
-}
+    public function actualizar ($data,$id){
+        $gModel = $this->db->table('persona');
+        $gModel->set($data);
+        $gModel->where($id);
+        return $gModel->update();
 
-public function actualizar($data,$id){
-  $Model=$this->ab->table('persona');
-  $Model=$->set($data);
-  $Model=$->where($id); 
-   return $gModel->update(); 
+    }
 
-}
 
-public function eliminar($id){
-  $Model=$this->ab->table('persona');
-  $Model=$->where($id);
-   return $gModel->delete();
+    public function  eliminar($id){
+        $gModel = $this->db->table('persona');
+        $gModel = $this->where($id);
+        return $gModel->delete();
 
-}
+    }
 
 }
